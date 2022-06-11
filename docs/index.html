@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mpurseのアドレスとSNSのプロフィールを紐付ける</title>
+<meta name="description" content="いずれ取引相関図を作るとき人を可視化するために。">
+<meta name="author" content="ytyaru">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.ja">
+<link rel="icon" href="assets/image/avator.png">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/toot-dialog.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="./lib/tingle/0.16.0/tingle.js"></script>
+<link rel="stylesheet" href="./lib/tingle/0.16.0/tingle.css">
+<!--<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">-->
+<link rel="stylesheet" type="text/css" href="./lib/toastify/1.11.2/min.css">
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>-->
+<script type="text/javascript" src="./lib/toastify/1.11.2/min.js"></script>
+<script src="js/toaster.js"></script>
+<script src="js/rest-client.js"></script>
+<!--
+<script src="js/misskey-rest-client.js"></script>
+<script src="js/misskey-authorizer-oauth.js"></script>
+<script src="js/misskey-authorizer-miauth.js"></script>
+<script src="js/misskey-api-client.js"></script>
+<script src="js/misskey-note-button.js"></script>
+<script src="js/misskey-note-dialog.js"></script>
+-->
+<script src="js/webmention-requester.js"></script>
+
+<script src="js/mastodon-rest-client.js"></script>
+<script src="js/mastodon-authorizer.js"></script>
+<script src="js/mastodon-api-client.js"></script>
+<!--<script src="js/tooter.js"></script>-->
+<!--
+<script src="js/toot-button.js"></script>
+<script src="js/toot-dialog.js"></script>
+-->
+<script src="js/comment.js"></script>
+<script src="js/tweet-button.js"></script>
+<script src="js/mention-section.js"></script>
+<script src="js/mpurse-send-button.js"></script>
+
+<script src="js/profile-generator.js"></script>
+
+<script src="js/main.js"></script>
+</head>
+<body>
+<h1>マストドンAPIでユーザのプロフィール情報を取得する</h1>
+<form>
+    <fieldset>
+    <legend>アカウント情報を取得する</legend>
+    <label>マストドン・インスタンスのドメイン名またはURL：<input id="mastodon-instance" value="mstdn.jp" placeholder="mstdn.jp" list="mastodon-instance-candidate" autocomplete="on"></label>
+    <datalist id="mastodon-instance-candidate">
+        <option value="mstdn.jp">mstdn.jp</option>
+        <option value="pawoo.net">pawoo.net</option>
+    </datalist>
+    <button id="get-account" type="button">認証してアカウント情報を取得する</button>
+    <output id="get-account-result"></output>
+    </fieldset>
+</form>
+
+<output id="export">
+</output>
+
+<!--
+<p>マストドンAPIは認証したときユーザのプロフィール情報を返さない。取得APIの実行にはユーザIDが必要だが、認証者のユーザIDを取得する方法がない。APIの設計ミスと思われる。</p>
+<p>かくなる上はユーザ名でアカウントを検索して、その中から自分とおぼしきアカウントをみつけ、そのIDを取得するしかない。この工程には人間が自分で判断せねばならないため、自動化できないという致命的な問題がある。これはひどい。</p>
+-->
+<!--
+<form>
+    <legend>ユーザ名からユーザIDを含むアカウント情報を検索する</legend>
+    <label>ユーザ名：<input id="mastodon-user-name" value="" placeholder="ytyaru"></label>
+    <button id="get-mastodon-search">アカウントを検索する</button>
+    <output id="mastodon-search-result"></output>
+</form>
+<form>
+    <legend>ユーザIDからアカウント情報を取得する</legend>
+    <label>ユーザID（名前でなく番号のやつ）：<input id="mastodon-user-id" value="" placeholder="233143"></label>
+    <button id="get-mastodon-user-profile">プロフィール情報を取得する</button>
+    <output id="mastodon-user-profile"></output>
+</form>
+-->
+
+<footer><a href="https://ytyaru.github.io/" title="著者"><img src="./asset/image/avator.png" width="64" height="64">ytyaru</a><mpurse-send-button to="MEHCqJbgiNERCH3bRAtNSSD9uxPViEX1nu" img="coin-monar"></mpurse-send-button><a href="https://ytyaru.github.io/Html.Mpurse.Api.20220517160403/setup.html" title="モナコインを使うには">？</a></footer>
+
+<tweet-button text="いいね！\n"></tweet-button>
+<toot-dialog domain="mstdn.jp pawoo.net" status="いいね！"></toot-dialog>
+<misskey-note-dialog domain="misskey.io misskey.dev" status="いいね！"></misskey-note-dialog>
+<mention-section></mention-section>
+</body>
+</html>
+
