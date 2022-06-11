@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', async(event) => {
             if (accessToken) {
                 const client = new MastodonApiClient(domain, accessToken)
                 const res = await client.accounts()
-                const gen = new ProfileGenerator()
+                const gen = new MastodonProfileGenerator()
                 document.getElementById('export').innerHTML = gen.generate(res)
                 //const res = await client.toot(sessionStorage.getItem(`status`))
                 //this.#tootEvent(res)
