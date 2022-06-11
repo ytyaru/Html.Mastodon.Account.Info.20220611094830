@@ -1,15 +1,61 @@
 <!doctype html>
 <html>
-<head>
+<head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
 <meta charset="utf-8">
-<title>mpurseのアドレスとSNSのプロフィールを紐付ける</title>
-<meta name="description" content="いずれ取引相関図を作るとき人を可視化するために。">
+<title>マストドンのプロフィール情報を取得する</title>
+<meta name="description" content="mpurseのアドレスがあれば投げモナボタンを作る。">
 <meta name="author" content="ytyaru">
 <link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/deed.ja">
 <link rel="icon" href="assets/image/avator.png">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/toot-dialog.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="ytyaru" />
+<meta property="og:title" content="マストドンのプロフィール情報を取得する" />
+<meta property="og:description" content="mpurseのアドレスがあれば投げモナボタンを作る。" />
+<meta property="og:image" content="https://ytyaru.github.io/Html.Mastodon.Account.Info.20220611094830/asset/image/eye-catch.png" />
+<meta property="article:published_time" content="2022-06-11T14:30:00+09:00" />
+<meta property="article:author" content="https://ytyaru.github.io/" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Article",
+    "author": {
+      "@type": "Person",
+      "name": "ytyaru",
+      "url": "https://ytyaru.github.io/",
+      "sameAs": [
+        "https://twitter.com/ytyaru1",
+        "https://github.com/ytyaru",
+        "https://profile.hatena.ne.jp/ytyaru/",
+        "https://mstdn.jp/@ytyaru",
+        "https://pawoo.net/@ytyaru_pawoo",
+        "https://www.pixiv.net/users/53831310",
+        "https://monaledge.com/user/MEHCqJbgiNERCH3bRAtNSSD9uxPViEX1nu",
+        "https://web3.askmona.org/user/1590",
+      ]
+    },
+    "dateModified": "2022-06-11T14:30:00+09:00",
+    "datePublished": "2022-06-11T14:30:00+09:00",
+    "headline": "マストドンのプロフィール情報を取得する",
+    "image": ["https://ytyaru.github.io/Html.Mastodon.Account.Info.20220611094830/asset/image/eye-catch.png"]
+  }
+</script>
+<link rel="webmention" href="https://webmention.io/ytyaru.github.io/webmention" />
+<link rel="pingback" href="https://webmention.io/ytyaru.github.io/xmlrpc" />
+<link rel="me" href="https://twitter.com/ytyaru1">
+<link rel="me" href="https://mstdn.jp/@ytyaru">
+<link rel="me" href="https://pawoo.net/@ytyaru_pawoo">
+<link rel="me" href="https://misskey.io/@ytyaru">
+<link rel="me" href="https://misskey.dev/@ytyaru">
+<link rel="me" href="https://github.com/ytyaru">
+<link rel="me" href="https://profile.hatena.ne.jp/ytyaru/">
+<link rel="me" href="https://ytyaru.hatenablog.com/">
+<link rel="me" href="https://www.pixiv.net/users/53831310">
+<link rel="me" href="https://monaledge.com/user/MEHCqJbgiNERCH3bRAtNSSD9uxPViEX1nu">
+<link rel="me" href="https://web3.askmona.org/user/1590">
 
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
@@ -50,6 +96,8 @@
 </head>
 <body>
 <h1>マストドンAPIでユーザのプロフィール情報を取得する</h1>
+<p>もしプロフィールの中にmpurseのアドレスらしき文字列があれば投げモナボタンを作る。</p>
+<p>プロフィール補足情報のラベルが「モナコイン」または「MONACOIN」であり、かつその値がmpurseのアドレスらしき文字列であった場合も、同じく投げモナボタンを作る。</p>
 <form>
     <fieldset>
     <legend>アカウント情報を取得する</legend>
